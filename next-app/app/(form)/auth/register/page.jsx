@@ -1,9 +1,13 @@
 "use client"
 
-import {register} from '@/actions/auth';
+import {useFormState} from 'react-dom'
 import Link from 'next/link';
+import {register} from '@/actions/auth';
 
 const Register = () => {
+  const [state,formAction]=useFormState(register,{})
+
+  console.log(state?.error)
   return (
     <div>
       <div className="bg-gray-100 flex justify-center items-center h-screen">
@@ -15,31 +19,31 @@ const Register = () => {
 <div className="lg:p-36 md:p-52 sm:20 p-8 w-full lg:w-1/2">
   <h1 className="text-2xl font-semibold mb-4">Register</h1>
 
-  <form action={register} method="POST">
+  <form action={formAction}>
     {/* <!-- Username Input --> */}
     <div className="mb-4">
-      <label   className="block text-gray-600">Name</label>
+      <label  htmlFor='name' className="block text-gray-600">Name</label>
       <input type="text"  name="name" className="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500" autocomplete="off"/>
     </div>
       {/* <!-- Email Input --> */}
       <div className="mb-4">
-      <label   className="block text-gray-600">Email</label>
+      <label  htmlFor='email' className="block text-gray-600">Email</label>
       <input type="email"  name="email" className="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500" autocomplete="off"/>
     </div>
     {/* <!-- Password Input --> */}
     <div className="mb-4">
-      <label for="password" className="block text-gray-600">Password</label>
+      <label htmlFor="password" className="block text-gray-600">Password</label>
       <input type="password" name="password" className="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500" autocomplete="off"/>
     </div>
      {/* <!-- Confirm Password Input --> */}
      <div className="mb-4">
-      <label   className="block text-gray-600">Confirm Password</label>
+      <label htmlFor='confirmPassword'  className="block text-gray-600">Confirm Password</label>
       <input type="confirmPassword"   name="confirmPassword" className="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500" autocomplete="off"/>
     </div>
     {/* <!-- Remember Me Checkbox --> */}
     <div className="mb-4 flex items-center">
       <input type="checkbox" name="remember" className="text-blue-500"/>
-      <label for="remember" className="text-gray-600 ml-2">Remember Me</label>
+      <label htmlFor="remember" className="text-gray-600 ml-2">Remember Me</label>
     </div>
     {/* <!-- Forgot Password Link --> */}
     <div className="mb-6 text-blue-500">

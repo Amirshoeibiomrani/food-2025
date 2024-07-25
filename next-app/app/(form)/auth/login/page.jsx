@@ -1,4 +1,3 @@
-"use client"
 import Link from "next/link"
 
 
@@ -18,18 +17,18 @@ const Login = () => {
   <form action='#' method="POST">
     {/* <!-- Username Input --> */}
     <div className="mb-4">
-      <label  className="block text-gray-600">Name</label>
+      <label htmlFor="name" className="block text-gray-600">Name</label>
       <input type="text" name="name" className="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500" autocomplete="off"/>
     </div>
     {/* <!-- Password Input --> */}
     <div className="mb-4">
-      <label  className="block text-gray-600">Password</label>
+      <label htmlFor="password" className="block text-gray-600">Password</label>
       <input type="password" name="password" className="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500" autocomplete="off"/>
     </div>
     {/* <!-- Remember Me Checkbox --> */}
     <div className="mb-4 flex items-center">
       <input type="checkbox" name="remember" className="text-blue-500"/>
-      <label  className="text-gray-600 ml-2">Remember Me</label>
+      <label htmlFor="remember" className="text-gray-600 ml-2">Remember Me</label>
     </div>
     {/* <!-- Forgot Password Link --> */}
     <div className="mb-6 text-blue-500">
