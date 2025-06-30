@@ -19,7 +19,8 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => ['*'],
+    'allowed_origins' => ['https://webprog-projects-js.ir', 'https://panel.webprog-projects-js.ir'],
+    // 'allowed_origins' => ['*'],
 
     'allowed_origins_patterns' => [],
 
@@ -29,6 +30,6 @@ return [
 
     'max_age' => 0,
 
-    'supports_credentials' => true,
+    'supports_credentials' => false,
 
 ];
